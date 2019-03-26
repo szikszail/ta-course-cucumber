@@ -9,12 +9,11 @@ Feature: EPAM career site test
     When the Location filter box is clicked
     And the country "Hungary" is selected
     And the city "Debrecen" is selected
-    And the Teams and Roles filter box is clicked
+    And the Skills box is clicked
     And the role "Software Test Engineering" is selected
-    And the Search button is clicked
+    And the Find button is clicked
     Then the position "Test Automation Engineer" should be visible
     And the priority of the position "Test Automation Engineer" should be normal
-    And the category of "Test Automation Engineer" position should be "Software Test Engineering"
     And the location of "Test Automation Engineer" position should be "Debrecen, Hungary"
     And the Apply button for "Test Automation Engineer" position should be visible
 
@@ -27,12 +26,11 @@ Feature: EPAM career site test
     When the Location filter box is clicked
     And the country "<country>" is selected
     And the city "<city>" is selected
-    And the Teams and Roles filter box is clicked
+    And the Skills filter box is clicked
     And the role "<category>" is selected
-    And the Search button is clicked
+    And the Find button is clicked
     Then the position "<position>" should be visible
     And the priority of the position "<position>" should be <priority>
-    And the category of "<position>" position should be "<category>"
     And the location of "<position>" position should be "<city>, <country>"
     And the Apply button for "<position>" position should be visible
 

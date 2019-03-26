@@ -1,5 +1,4 @@
-function Site() {
-
+class Site {
     
 }
 
