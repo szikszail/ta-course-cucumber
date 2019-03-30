@@ -1,13 +1,17 @@
 {
   "name": "ta-course-cucumber",
   "version": "1.0.0",
-  "description": "",
+  "description": "Exercise E2E testing application with cucumber",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js features/**/*.feature --require step_definitions"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Laszlo Szikszai <sziklaszlo@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
   "dependencies": {
     "chai": "^4.2.0",
     "chromedriver": "^2.46.0",
