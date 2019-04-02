@@ -23,27 +23,27 @@ Feature: EPAM career site test
       Currently we are looking for a Test Automation Engineer for our Debrecen office to make the team even stronger.
       """
 
-  Scenario Outline: 2. Searching for Software tester jobs - <position>
-    Given the EPAM career page is opened
+  # Scenario Outline: 2. Searching for Software tester jobs - <position>
+  #   Given the EPAM career page is opened
 
-    When the Location filter box is clicked
-    And the country "<country>" is selected
-    And the city "<city>" is selected
-    And the Skills filter box is clicked
-    And the role "<category>" is selected
-    And the Find button is clicked
-    Then the position "<position>" should be visible
-    And the priority of "<position>" position should be <priority>
-    And the location of "<position>" position should be "<city>, <country>"
-    And the Apply button for "<position>" position should be visible
+  #   When the Location filter box is clicked
+  #   And the country "<country>" is selected
+  #   And the city "<city>" is selected
+  #   And the Skills filter box is clicked
+  #   And the role "<category>" is selected
+  #   And the Find button is clicked
+  #   Then the position "<position>" should be visible
+  #   And the priority of "<position>" position should be <priority>
+  #   And the location of "<position>" position should be "<city>, <country>"
+  #   And the Apply button for "<position>" position should be visible
 
-    When the Apply button for "<position>" position is clicked
-    Then the job description should contain the following text:
-      """
-      Currently we are looking for a <position> for our <city> office to make the team even stronger.
-      """
+  #   When the Apply button for "<position>" position is clicked
+  #   Then the job description should contain the following text:
+  #     """
+  #     Currently we are looking for a <position> for our <city> office to make the team even stronger.
+  #     """
 
-    Examples:
-      | country | city     | position                 | category                  | priority |
-      | Hungary | Debrecen | Test Automation Engineer | Software Test Engineering | normal   |
-      | Hungary | Budapest | Functional Tester        | Software Test Engineering | high     |
+  #   Examples:
+  #     | country | city     | position                 | category                  | priority |
+  #     | Hungary | Debrecen | Test Automation Engineer | Software Test Engineering | normal   |
+  #     | Hungary | Budapest | Functional Tester        | Software Test Engineering | high     |

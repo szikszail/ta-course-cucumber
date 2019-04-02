@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js features/**/*.feature --require step_definitions"
+    "test": "cucumber-js features/**/*.feature --require framework/step_definitions"
   },
   "author": "Laszlo Szikszai <sziklaszlo@gmail.com>",
   "license": "MIT",
