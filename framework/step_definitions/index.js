@@ -2,18 +2,17 @@ require('chromedriver');
 const { Builder, By, until } = require('selenium-webdriver');
 const { Given, When, Then, BeforeAll, AfterAll, setDefaultTimeout } = require('cucumber');
 const { expect } = require('chai');
-const Home = require('../../po/pages/home');
+const Careers = require('../../po/pages/careers');
 const urls = require('../data/urls');
 
 let driver;
-let home;
+let careers;
 
 setDefaultTimeout(30e3);
 
 BeforeAll(async () => {
     driver = new Builder().forBrowser('chrome').build();
-    global.by = By;
-    home = new Home(driver);
+    careers = new Careers(driver);
     driver.isElementVisible = async locator => {
         try {
             await driver.findElement(locator);
@@ -33,22 +32,22 @@ BeforeAll(async () => {
 AfterAll(() => driver.quit());
 
 Given('the EPAM career page is opened', async () => {
-    await home.loadPage(urls.careerSite);
+    await careers.loadPage(urls.careerSite);
 });
 
 When(/^the (Location|Skills) filter box is clicked$/, (box) => {
     switch (box) {
         case "Location":
-            return home.clickLocationFilterBox();
+            return careers.clickLocationFilterBox();
         default:
-            return home.clickJobFilterBox();
+            return careers.clickJobFilterBox();
     }
 });
 
 When(/^the (country|city|role) "([^"]*)" is selected$/, async (type, value) => {
     switch (type) {
         case "country":
-            const countryLocator = By.xpath('//strong[contains(@class, "results__group")][.="' + value + '"]');
+           /*  const countryLocator = By.xpath('//strong[contains(@class, "results__group")][.="' + value + '"]');
             if (!await driver.isElementVisible(countryLocator)) {
                 throw new Error("There is no such country: " + value);
             }
@@ -57,7 +56,8 @@ When(/^the (country|city|role) "([^"]*)" is selected$/, async (type, value) => {
             const classes = await $container.getAttribute('class');
             if (!classes.indexOf('dropdown-cities')) {
                 await $country.click();
-            }
+            } */
+            await careers.clickCountry(value);
             break;
         case "city":
             const cityLocator = By.xpath('//li[.="' + value + '"]');
