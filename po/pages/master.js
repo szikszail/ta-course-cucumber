@@ -1,4 +1,6 @@
-const {By} = require('selenium-webdriver')
+const {
+    By
+} = require('selenium-webdriver')
 const elements = require('../selectors/master');
 
 class Master {
@@ -18,7 +20,7 @@ class Master {
         return this.driver.get(url);
     }
 
-    async loadPage(url){
+    async loadPage(url) {
         await this.open(url);
         await this.waitForLoading();
         await this.dismissCookies();
